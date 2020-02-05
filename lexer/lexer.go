@@ -1,9 +1,7 @@
 package lexer
 
 import (
-	"briqs/token"
-
-	"github.com/rogpeppe/godef/go/token"
+	"../token"
 )
 
 type Lexer struct {
@@ -55,9 +53,9 @@ func (l *Lexer) NextToken() token.Token {
 	}
 
 	l.readChar()
-	return tok	
+	return tok
 }
 
 func newToken(tokenType token.TokenType, ch byte) token.Token {
-	return token.Token{type: tokenType, Literal: string(ch)}
+	return token.Token{Type: tokenType, Literal: string(ch)}
 }
